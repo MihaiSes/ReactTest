@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Domain;
 using MediatR;
 using Persistence;
@@ -21,7 +22,7 @@ namespace Application.Activities
             private readonly DataContext _context;
             public Handler(DataContext context)
             {
-            _context = context;
+                _context = context;
             }
 
             public async Task<Activity> Handle(Query request, CancellationToken cancellationToken)
